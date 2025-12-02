@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOUR UGANDA - Explore the Pearl of Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/uganda.png">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #1a5d1a;
+            --primary-dark: #0f3d0f;
+            --secondary: #f9a826;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: #fff;
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        body.dark-mode header {
+            background-color: rgba(30, 30, 30, 0.98);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        body.dark-mode .logo h1,
+        body.dark-mode .logo i {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        body.dark-mode nav ul li a {
+            color: #f0f0f0;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        body.dark-mode nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        body.dark-mode nav ul li a::after {
+            background-color: var(--secondary);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .language-selector select {
+            padding: 5px 10px;
+            border-radius: var(--radius);
+            border: 1px solid var(--light-gray);
+            background-color: white;
+        }
+
+        body.dark-mode .language-selector select {
+            background-color: #333;
+            color: #f0f0f0;
+            border-color: #555;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        body.dark-mode .theme-toggle {
+            color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        body.dark-mode .mobile-menu-btn {
+            color: #f0f0f0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://www.achieveglobalsafaris.com/wp-content/uploads/2022/01/FotoJet-6-1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+            padding: 0 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+
+        .search-bar {
+            display: flex;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .search-bar {
+            background-color: rgba(40, 40, 40, 0.95);
+        }
+
+        .search-bar input, .search-bar select {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        body.dark-mode .search-bar input,
+        body.dark-mode .search-bar select {
+            background-color: transparent;
+            color: #f0f0f0;
+        }
+
+        .search-bar button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Section Common Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode .section-title h2 {
+            color: var(--secondary);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        body.dark-mode .section-title p {
+            color: #bbb;
+        }
+
+        /* Featured Destinations */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .destination-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background-color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.dark-mode .destination-card {
+            background-color: #222;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .destination-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .destination-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .destination-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        body.dark-mode .destination-content h3 {
+            color: var(--secondary);
+        }
+
+        .destination-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        body.dark-mode .destination-content p {
+            color: #bbb;
+        }
+
+        /* Tour Packages */
+        .tour-packages {
+            background-color: var(--light-gray);
+        }
+
+        body.dark-mode .tour-packages {
+            background-color: #1a1a1a;
+        }
+
+        .packages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        body.dark-mode .package-card {
+            background-color: #222;
+        }
+
+        .package-card:hover {
+            transform: scale(1.03);
+        }
+
+        .package-header {
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .package-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 20px 0;
+            flex-grow: 1;
+        }
+
+        .package-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .package-features li i {
+            color: var(--primary);
+        }
+
+        body.dark-mode .package-features li {
+            border-bottom: 1px solid #444;
+        }
+
+        .package-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        body.dark-mode .package-price {
+            color: var(--secondary);
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            background-color: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            display: none;
+            transition: var(--transition);
+        }
+
+        body.dark-mode .testimonial-slide {
+            background-color: #222;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .testimonial-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-content {
+                flex-direction: row;
+                text-align: left;
+            }
+        }
+
+        .testimonial-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--light-gray);
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .testimonial-img {
+            border-color: #444;
+        }
+
+        .testimonial-text {
+            flex: 1;
+        }
+
+        .testimonial-text p {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-text p:before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--secondary);
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-author {
+                align-items: flex-start;
+            }
+        }
+
+        .testimonial-author h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        body.dark-mode .testimonial-author h4 {
+            color: var(--secondary);
+        }
+
+        .testimonial-author .country {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        body.dark-mode .testimonial-author .country {
+            color: #bbb;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: var(--primary);
+            transform: scale(1.2);
+        }
+
+        body.dark-mode .slider-dot.active {
+            background-color: var(--secondary);
+        }
+
+        /* Interactive Map */
+        .uganda-map {
+            background-color: var(--light-gray);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        body.dark-mode .uganda-map {
+            background-color: #1a1a1a;
+        }
+
+        .map-container {
+            height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/0/09/Base_Map_of_Uganda.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-point {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            transition: var(--transition);
+            box-shadow: 0 0 0 0 rgba(26, 93, 26, 0.7);
+            animation: pulse 2s infinite;
+            border: 2px solid white;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(26, 93, 26, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(26, 93, 26, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(26, 93, 26, 0);
+            }
+        }
+
+        .map-point:hover {
+            background-color: var(--secondary);
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+
+        .map-point.active {
+            background-color: var(--secondary);
+            transform: translate(-50%, -50%) scale(1.3);
+        }
+
+        .location-info {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius);
+            padding: 20px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: var(--shadow);
+            display: none;
+        }
+
+        body.dark-mode .location-info {
+            background-color: rgba(30, 30, 30, 0.95);
+        }
+
+        .location-info.active {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            to { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .location-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+        }
+
+        .location-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        body.dark-mode .location-info h3 {
+            color: var(--secondary);
+        }
+
+        .location-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        body.dark-mode .location-info p {
+            color: #bbb;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .booking-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .booking-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .booking-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: var(--radius);
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #e0971f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--radius);
+            background-color: white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        body.dark-mode .feature-card {
+            background-color: #222;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            height: 70px;
+            width: 70px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(26, 93, 26, 0.1);
+            border-radius: 50%;
+        }
+
+        body.dark-mode .feature-icon {
+            color: var(--secondary);
+            background-color: rgba(249, 168, 38, 0.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        body.dark-mode .feature-card h3 {
+            color: var(--secondary);
+        }
+
+        /* Culture, Wildlife, and Other Sections */
+        .culture-grid, .wildlife-grid, .lifestyle-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .culture-card, .wildlife-card, .lifestyle-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        body.dark-mode .culture-card,
+        body.dark-mode .wildlife-card,
+        body.dark-mode .lifestyle-card {
+            background-color: #222;
+        }
+
+        .culture-card:hover, .wildlife-card:hover, .lifestyle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .culture-img, .wildlife-img, .lifestyle-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .culture-content, .wildlife-content, .lifestyle-content {
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            outline: none;
+            background-color: white;
+            color: var(--dark);
+        }
+
+        body.dark-mode .newsletter-form input {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                order: 1;
+            }
+
+            .logo {
+                order: 0;
+            }
+
+            .header-actions {
+                order: 2;
+                margin-left: auto;
+            }
+
+            nav {
+                order: 3;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar input, .search-bar select {
+                width: 100%;
+                margin-bottom: 1px;
+            }
+
+            .booking-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+            
+            .testimonial-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .destinations-grid,
+            .packages-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .location-info {
+                width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-mountain"></i>
+                <h1>TOUR UGANDA</h1>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#tours">Tours</a></li>
+                    <li><a href="#culture">Culture</a></li>
+                    <li><a href="#wildlife">Wildlife</a></li>
+                    <li><a href="#lifestyle">Lifestyle</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="language-selector">
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Discover the Pearl of Africa</h2>
+            <p>Experience breathtaking landscapes, diverse wildlife, rich cultures, and unforgettable adventures in Uganda.</p>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search destinations, tours, activities...">
+                <select>
+                    <option value="">All Destinations</option>
+                    <option value="bwindi">Bwindi Impenetrable Forest</option>
+                    <option value="murchison">Murchison Falls</option>
+                    <option value="rwenzori">Rwenzori Mountains</option>
+                    <option value="jinja">Jinja - Source of the Nile</option>
+                </select>
+                <select>
+                    <option value="">All Activities</option>
+                    <option value="gorilla">Gorilla Trekking</option>
+                    <option value="safari">Wildlife Safari</option>
+                    <option value="hiking">Mountain Hiking</option>
+                    <option value="rafting">White Water Rafting</option>
+                </select>
+                <button><i class="fas fa-search"></i> Search</button>
+            </div>
+            
+            <div class="booking-buttons">
+                <a href="#booking" class="btn btn-primary">
+                    <i class="fas fa-calendar-alt"></i> Book a Tour
+                </a>
+                <button class="btn btn-secondary" id="whatsappBtn">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="section" id="destinations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Destinations</h2>
+                <p>Explore Uganda's most iconic natural wonders and cultural sites</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://www.insidebwindiforestnationalpark.com/wp-content/uploads/2021/09/trees-and-plant-life.jpg');"></div>
+                    <div class="destination-content">
+                        <h3>Bwindi Impenetrable Forest</h3>
+                        <p>Home to almost half of the world's remaining mountain gorillas. Experience the thrill of gorilla trekking in this UNESCO World Heritage Site.</p>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/ab/2a/07/murchison-falls-view.jpg?w=1200&h=-1&s=1');"></div>
+                    <div class="destination-content">
+                        <h3>Murchison Falls</h3>
+                        <p>Witness the mighty Nile River forced through a 7-meter gap, plunging 43 meters into the Devil's Cauldron. Uganda's largest national park.</p>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWu7Q2u1qcBfQQSwpelf-TVN7VrmuRen1iZw&s');"></div>
+                    <div class="destination-content">
+                        <h3>Rwenzori Mountains</h3>
+                        <p>The fabled "Mountains of the Moon" with snow-capped peaks, unique vegetation, and challenging trekking routes for adventurous souls.</p>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Packages -->
+    <section class="section tour-packages" id="tours">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular Tour Packages</h2>
+                <p>Choose from our carefully curated tours that showcase the best of Uganda</p>
+            </div>
+            
+            <div class="packages-container">
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Gorilla Trekking Adventure</h3>
+                        <p>5 Days | Luxury</p>
+                    </div>
+                    <div class="package-body">
+                        <p>An exclusive gorilla trekking experience in Bwindi Impenetrable Forest with luxury accommodation.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 2 Gorilla trekking permits</li>
+                            <li><i class="fas fa-check"></i> Luxury lodge accommodation</li>
+                            <li><i class="fas fa-check"></i> Private guide & vehicle</li>
+                            <li><i class="fas fa-check"></i> All meals included</li>
+                        </ul>
+                        <div class="package-price">$2,850</div>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Complete Uganda Safari</h3>
+                        <p>12 Days | Premium</p>
+                    </div>
+                    <div class="package-body">
+                        <p>The ultimate Ugandan experience covering wildlife, culture, and adventure activities.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Gorilla & chimp trekking</li>
+                            <li><i class="fas fa-check"></i> Big Five safari in 3 parks</li>
+                            <li><i class="fas fa-check"></i> Source of the Nile visit</li>
+                            <li><i class="fas fa-check"></i> Cultural experiences</li>
+                        </ul>
+                        <div class="package-price">$4,990</div>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Budget Wildlife Explorer</h3>
+                        <p>7 Days | Standard</p>
+                    </div>
+                    <div class="package-body">
+                        <p>An affordable safari experience perfect for budget-conscious travelers.</p>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> Murchison Falls safari</li>
+                            <li><i class="fas fa-check"></i> Ziwa Rhino Sanctuary</li>
+                            <li><i class="fas fa-check"></i> Budget accommodation</li>
+                            <li><i class="fas fa-check"></i> Group tours</li>
+                        </ul>
+                        <div class="package-price">$1,450</div>
+                        <a href="#booking" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Visit Uganda -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Visit Uganda?</h2>
+                <p>Discover what makes Uganda the ultimate African destination</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Diverse Landscapes</h3>
+                    <p>From snow-capped mountains to vast savannahs, lush forests, and mighty waterfalls.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <h3>Incredible Wildlife</h3>
+                    <p>Home to mountain gorillas, chimpanzees, the Big Five, and over 1,000 bird species.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Warm Hospitality</h3>
+                    <p>Experience the famous Ugandan friendliness and vibrant cultural diversity.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Adventure Activities</h3>
+                    <p>White-water rafting, mountain trekking, bungee jumping, and wildlife safaris.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Traveler Stories</h2>
+                <p>See what our guests have to say about their Ugandan adventures</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <img src="https://www.inspiresafaris.com/wp-content/uploads/2025/03/attract-tourists-destinations.jpg" alt="Sarah Johnson" class="testimonial-img">
+                        <div class="testimonial-text">
+                            <p>"The gorilla trekking experience in Bwindi was truly life-changing. Seeing these majestic creatures in their natural habitat is something I'll never forget. Our guide was incredibly knowledgeable and made the whole experience seamless."</p>
+                            <div class="testimonial-author">
+                                <h4>Sarah Johnson</h4>
+                                <span class="country">USA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80" alt="Marcus Chen" class="testimonial-img">
+                        <div class="testimonial-text">
+                            <p>"Uganda exceeded all our expectations. From the wildlife safaris in Queen Elizabeth National Park to the beautiful landscapes around Lake Bunyonyi, every day brought new wonders. The people are so friendly and welcoming!"</p>
+                            <div class="testimonial-author">
+                                <h4>Marcus Chen</h4>
+                                <span class="country">Australia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=988&q=80" alt="Elena Rodriguez" class="testimonial-img">
+                        <div class="testimonial-text">
+                            <p>"As a birdwatcher, Uganda was paradise. I spotted over 200 species in just two weeks! The guides were exceptional at finding rare birds. The combination of wildlife, culture, and scenery makes Uganda a must-visit destination."</p>
+                            <div class="testimonial-author">
+                                <h4>Elena Rodriguez</h4>
+                                <span class="country">Spain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Explore Uganda</h2>
+                <p>Discover Uganda's top attractions with our interactive map</p>
+            </div>
+            
+            <div class="uganda-map">
+                <div class="map-container">
+                    <!-- Map points with location data -->
+                    <div class="map-point" style="top: 30%; left: 25%;" data-location="murchison"></div>
+                    <div class="map-point" style="top: 60%; left: 45%;" data-location="bwindi"></div>
+                    <div class="map-point" style="top: 20%; left: 60%;" data-location="kidepo"></div>
+                    <div class="map-point" style="top: 50%; left: 70%;" data-location="elgon"></div>
+                    <div class="map-point" style="top: 65%; left: 80%;" data-location="victoria"></div>
+                    <div class="map-point" style="top: 45%; left: 50%;" data-location="queen"></div>
+                    <div class="map-point" style="top: 40%; left: 40%;" data-location="rwenzori"></div>
+                    <div class="map-point" style="top: 55%; left: 65%;" data-location="bunyonyi"></div>
+                    <div class="map-point" style="top: 50%; left: 75%;" data-location="jinja"></div>
+                    
+                    <!-- Location Info Panel -->
+                    <div class="location-info" id="locationInfo">
+                        <img id="locationImage" src="https://images.unsplash.com/photo-1573843986-8d0045b5c94c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Location" class="location-img">
+                        <h3 id="locationTitle">Murchison Falls National Park</h3>
+                        <p id="locationDescription">Uganda's largest national park, famous for the powerful Murchison Falls where the Nile River explodes through a narrow gorge. Home to lions, elephants, giraffes, and over 450 bird species.</p>
+                        <a href="#booking" class="btn btn-primary">Book Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="section" id="culture">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ugandan Culture</h2>
+                <p>Discover the rich cultural heritage of Uganda's diverse tribes</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <div class="culture-img" style="background-image: url('https://gpjs3bucket.s3.amazonaws.com/wp-content/uploads/2017/08/26162113/GPJNews_Uganda_AA_Nderecentre_40_Web.jpg');"></div>
+                    <div class="culture-content">
+                        <h3>Traditional Dances</h3>
+                        <p>Experience vibrant traditional dances like the Kiganda, Runyege, and Ekitaguriro from different Ugandan tribes.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-img" style="background-image: url('https://i.ytimg.com/vi/u2GNeqcIY_k/maxresdefault.jpg');"></div>
+                    <div class="culture-content">
+                        <h3>Ugandan Local Food</h3>
+                        <p>Taste traditional dishes like matooke, luwombo, and rolex. Experience Uganda's unique food culture.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card">
+                    <div class="culture-img" style="background-image: url('https://kitararcc.com/wp-content/uploads/2020/05/packshoot-nana06922-min-e1512674353784.jpg?w=1024');"></div>
+                    <div class="culture-content">
+                        <h3>Local Crafts</h3>
+                        <p>Discover traditional crafts including bark cloth making, basket weaving, and pottery from different regions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wildlife Section -->
+    <section class="section tour-packages" id="wildlife">
+        <div class="container">
+            <div class="section-title">
+                <h2>Wildlife & Nature</h2>
+                <p>Encounter Uganda's incredible biodiversity and natural wonders</p>
+            </div>
+            
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <div class="wildlife-img" style="background-image: url('https://wwfint.awsassets.panda.org/img/original/48700.jpg');"></div>
+                    <div class="wildlife-content">
+                        <h3>Mountain Gorillas</h3>
+                        <p>Track endangered mountain gorillas in Bwindi Impenetrable Forest and Mgahinga Gorilla National Park.</p>
+                    </div>
+                </div>
+                
+                <div class="wildlife-card">
+                    <div class="wildlife-img" style="background-image: url('https://www.inspiresafaris.com/wp-content/uploads/2025/06/chimps-in-kibale-1200x675-1.webp');"></div>
+                    <div class="wildlife-content">
+                        <h3>Chimpanzee Trekking</h3>
+                        <p>Meet our closest relatives in Kibale Forest, Budongo, and Kyambura Gorge.</p>
+                    </div>
+                </div>
+                
+                <div class="wildlife-card">
+                    <div class="wildlife-img" style="background-image: url('https://ecolodgesanywhere.com/wp-content/uploads/2023/11/Big-five-animals-featured-imagejpg-900x500.jpg');"></div>
+                    <div class="wildlife-content">
+                        <h3>Big Five Safaris</h3>
+                        <p>Spot lions, elephants, leopards, buffaloes, and rhinos in Uganda's spectacular national parks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lifestyle Section -->
+    <section class="section" id="lifestyle">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ugandan Lifestyle</h2>
+                <p>Experience modern and traditional Ugandan life</p>
+            </div>
+            
+            <div class="lifestyle-grid">
+                <div class="lifestyle-card">
+                    <div class="lifestyle-img" style="background-image: url('https://www.bwindiugandagorillatrekking.com/wp-content/uploads/2020/04/Kampala-City.jpg');"></div>
+                    <div class="lifestyle-content">
+                        <h3>Kampala City Life</h3>
+                        <p>Explore Uganda's vibrant capital with its bustling markets, nightlife, and cultural attractions.</p>
+                    </div>
+                </div>
+                
+                <div class="lifestyle-card">
+                    <div class="lifestyle-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcsrMrSUeGiNJYtqjCFw-UNmA3rlJPNwKMxw&s');"></div>
+                    <div class="lifestyle-content">
+                        <h3>Ugandan Coffee Culture</h3>
+                        <p>Visit coffee plantations and learn about Uganda's premium Arabica coffee production.</p>
+                    </div>
+                </div>
+                
+                <div class="lifestyle-card">
+                    <div class="lifestyle-img" style="background-image: url('https://www.4x4uganda.com/wp-content/uploads/2023/01/Nakasero-Market-Kampala.jpg');"></div>
+                    <div class="lifestyle-content">
+                        <h3>Local Markets</h3>
+                        <p>Experience the colors and energy of Ugandan markets like Owino and Nakasero in Kampala.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <h2>Ready for Your Ugandan Adventure?</h2>
+            <p>Contact us today to start planning your personalized trip to Uganda. Our travel experts will help you create the perfect itinerary based on your interests and budget.</p>
+            
+            <div class="booking-buttons">
+                <a href="tel:+256712345678" class="btn btn-primary">
+                    <i class="fas fa-phone-alt"></i> Call Us: +256 712 345 678
+                </a>
+                <a href="mailto:info@touruganda.com" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Email: info@touruganda.com
+                </a>
+                <button class="btn btn-primary" id="whatsappBtn2">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Chat
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>TOUR UGANDA</h3>
+                    <p>Your gateway to exploring the Pearl of Africa. We offer unforgettable experiences showcasing Uganda's natural beauty, wildlife, and vibrant cultures.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#tours">Tour Packages</a></li>
+                        <li><a href="#culture">Ugandan Culture</a></li>
+                        <li><a href="#wildlife">Wildlife Safaris</a></li>
+                        <li><a href="#lifestyle">Lifestyle</a></li>
+                        <li><a href="#booking">Booking</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Plot 12, Kimathi Avenue, Kampala</li>
+                        <li><i class="fas fa-phone"></i> +256 712 345 678</li>
+                        <li><i class="fas fa-envelope"></i> info@touruganda.com</li>
+                        <li><i class="fas fa-clock"></i> Mon - Fri: 8:00 AM - 6:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on special offers, new tours, and travel tips for Uganda.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 TOUR UGANDA. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Dark/Light Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.className = 'fas fa-sun';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeIcon.className = 'fas fa-sun';
+        }
+        
+        // Testimonial Slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+        let slideInterval;
+        
+        function showSlide(n) {
+            // Hide all slides
+            testimonialSlides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // Remove active class from all dots
+            sliderDots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the selected slide
+            testimonialSlides[n].classList.add('active');
+            sliderDots[n].classList.add('active');
+            currentSlide = n;
+        }
+        
+        // Add click event to dots
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetSlideInterval();
+            });
+        });
+        
+        // Auto-rotate slides every 5 seconds
+        function startSlideInterval() {
+            slideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+        
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+        
+        startSlideInterval();
+        
+        // Language Selector
+        const languageSelect = document.getElementById('languageSelect');
+        languageSelect.addEventListener('change', (e) => {
+            alert(`Language changed to ${e.target.options[e.target.selectedIndex].text}. This feature would load translations in a full implementation.`);
+        });
+        
+        // Interactive Map Points
+        const mapPoints = document.querySelectorAll('.map-point');
+        const locationInfo = document.getElementById('locationInfo');
+        const locationImage = document.getElementById('locationImage');
+        const locationTitle = document.getElementById('locationTitle');
+        const locationDescription = document.getElementById('locationDescription');
+        
+        // Location data for map points
+        const locationData = {
+            murchison: {
+                title: "Murchison Falls National Park",
+                image: "https://ecoadventuresafaris.com/wp-content/uploads/2023/11/WhatsApp-Image-2022-07-04-at-8.51.17-AM-1000x675.jpeg",
+                description: "Uganda's largest national park, famous for the powerful Murchison Falls where the Nile River explodes through a narrow gorge. Home to lions, elephants, giraffes, and over 450 bird species.",
+                link: "#booking"
+            },
+            bwindi: {
+                title: "Bwindi Impenetrable Forest",
+                image: "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                description: "UNESCO World Heritage Site and home to almost half of the world's remaining mountain gorillas. Offers one of the most thrilling wildlife experiences on Earth.",
+                link: "#booking"
+            },
+            kidepo: {
+                title: "Kidepo Valley National Park",
+                image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80",
+                description: "Remote wilderness in northeastern Uganda with stunning savannah landscapes. Known for large herds of buffalo, elephants, and unique wildlife like cheetahs and bat-eared foxes.",
+                link: "#booking"
+            },
+            elgon: {
+                title: "Mount Elgon National Park",
+                image: "https://www.queenelizabethparkuganda.com/wp-content/uploads/2019/09/sipi-falls-640x400.jpg",
+                description: "Ancient extinct volcano with the largest volcanic base in the world. Features spectacular waterfalls, caves, hot springs, and diverse montane ecosystems.",
+                link: "#booking"
+            },
+            victoria: {
+                title: "Lake Victoria",
+                image: "https://www.explorerwandatours.com/wp-content/uploads/2019/12/Lake-Victoria-750x371.jpg",
+                description: "Africa's largest lake and the source of the Nile River. Offers beautiful islands, fishing communities, and water-based activities around Entebbe and Jinja.",
+                link: "#booking"
+            },
+            queen: {
+                title: "Queen Elizabeth National Park",
+                image: "https://www.gorillaexpeditions.com/wp-content/uploads/2024/05/queen-elizabeth-national-park.jpg",
+                description: "Uganda's most popular savannah park with diverse ecosystems. Famous for tree-climbing lions, chimpanzees, and boat cruises on the Kazinga Channel.",
+                link: "#booking"
+            },
+            rwenzori: {
+                title: "Rwenzori Mountains",
+                image: "https://www.ugandasafaristours.com/wp-content/uploads/2017/07/Rwenzori.jpg",
+                description: "The legendary 'Mountains of the Moon' with permanently snow-capped peaks. Offers challenging multi-day treks through unique Afro-alpine vegetation.",
+                link: "#booking"
+            },
+            bunyonyi: {
+                title: "Lake Bunyonyi",
+                image: "https://www.lakebunyonyirockresort.net/wp-content/uploads/2024/11/Lake-Bunyonyi.jpg",
+                description: "Africa's second deepest lake, known for its stunning scenery and 29 islands. A peaceful retreat perfect for relaxation, canoeing, and birdwatching.",
+                link: "#booking"
+            },
+            jinja: {
+                title: "Jinja - Source of the Nile",
+                image: "https://turkanawildlifesafaris.com/wp-content/uploads/2025/10/Source-of-the-Nile.jpg",
+                description: "Adventure capital of East Africa where the Nile River begins its journey. Offers white-water rafting, bungee jumping, and visits to historical sites.",
+                link: "#booking"
+            }
+        };
+        
+        mapPoints.forEach(point => {
+            point.addEventListener('click', () => {
+                const location = point.getAttribute('data-location');
+                const data = locationData[location];
+                
+                if (data) {
+                    // Update location info
+                    locationImage.src = data.image;
+                    locationImage.alt = data.title;
+                    locationTitle.textContent = data.title;
+                    locationDescription.textContent = data.description;
+                    
+                    // Update book tour link
+                    const bookBtn = locationInfo.querySelector('.btn');
+                    bookBtn.href = data.link;
+                    
+                    // Show location info
+                    locationInfo.classList.add('active');
+                    
+                    // Remove active class from all points
+                    mapPoints.forEach(p => p.classList.remove('active'));
+                    // Add active class to clicked point
+                    point.classList.add('active');
+                }
+            });
+        });
+        
+        // Close location info when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.map-point') && !e.target.closest('.location-info')) {
+                locationInfo.classList.remove('active');
+                mapPoints.forEach(p => p.classList.remove('active'));
+            }
+        });
+        
+        // WhatsApp Buttons
+        const whatsappBtns = document.querySelectorAll('#whatsappBtn, #whatsappBtn2');
+        whatsappBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Opening WhatsApp chat... In the full website, this would open WhatsApp with a pre-filled message to +256 712 345 678');
+            });
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForm = document.getElementById('newsletterForm');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            alert(`Thank you for subscribing with ${email}! You'll receive our updates soon.`);
+            newsletterForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card, .destination-card, .package-card, .culture-card, .wildlife-card, .lifestyle-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.feature-card, .destination-card, .package-card, .culture-card, .wildlife-card, .lifestyle-card');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            animateOnScroll();
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Search functionality
+        const searchBar = document.querySelector('.search-bar');
+        const searchBtn = searchBar.querySelector('button');
+        
+        searchBtn.addEventListener('click', () => {
+            const searchInput = searchBar.querySelector('input').value;
+            const destinationSelect = searchBar.querySelector('select:nth-of-type(1)').value;
+            const activitySelect = searchBar.querySelector('select:nth-of-type(2)').value;
+            
+            if (searchInput || destinationSelect || activitySelect) {
+                alert(`Searching for: ${searchInput || 'All'} | Destination: ${destinationSelect || 'All'} | Activity: ${activitySelect || 'All'}\n\nIn the full website, this would filter tour packages and destinations.`);
+            } else {
+                alert('Please enter search criteria or select from the dropdowns.');
+            }
+        });
+        
+        // Initialize map with default location
+        window.addEventListener('DOMContentLoaded', () => {
+            // Show Murchison Falls by default
+            const defaultPoint = document.querySelector('.map-point[data-location="murchison"]');
+            if (defaultPoint) {
+                defaultPoint.click();
+            }
+        });
+    </script>
+</body>
+</html>
